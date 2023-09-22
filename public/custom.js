@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (state.player === null && state.season !== null && state.date === null) {
       try {
         let response = await fetch(
-          `http://localhost:3000/api/gettable?season=${state.season}`
+          window.location.protocol + `/api/gettable?season=${state.season}`
         );
         response = await response.json();
         console.log(response);
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ) {
       try {
         let response = await fetch(
-          `http://localhost:3000/api/gettable?date=${state.date}`
+          window.location.protocol + `/api/gettable?date=${state.date}`
         );
         response = await response.json();
         console.log(response);
@@ -148,7 +148,8 @@ document.addEventListener('DOMContentLoaded', function () {
     ) {
       try {
         let response = await fetch(
-          `http://localhost:3000/api/getplayeractions?player=${state.player}&season=${state.season}`
+          window.location.protocol +
+            `/api/getplayeractions?player=${state.player}&season=${state.season}`
         );
         response = await response.json();
         response.forEach((obj) => {
@@ -178,7 +179,8 @@ document.addEventListener('DOMContentLoaded', function () {
     ) {
       try {
         let response = await fetch(
-          `http://localhost:3000/api/getplayeractions?player=${state.player}&date=${state.date}`
+          window.location.protocol +
+            `/api/getplayeractions?player=${state.player}&date=${state.date}`
         );
         response = await response.json();
         response.forEach((obj) => {

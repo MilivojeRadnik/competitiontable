@@ -2,7 +2,9 @@ const axios = require('axios');
 
 exports.players = async (req, res) => {
   try {
-    let respose = await axios.get('http://localhost:3000/api/getplayers');
+    let respose = await axios.get(
+      req.protocol + '://' + req.get('host') + '/api/getplayers'
+    );
     res.render('list', { data: respose.data, title: 'Players' });
   } catch (error) {
     console.error(error);
@@ -19,9 +21,14 @@ exports.playerActions = async (req, res) => {
 
   try {
     let respose = await axios.get(
-      `http://localhost:3000/api/getplayeractions?player=${player}`
+      req.protocol +
+        '://' +
+        req.get('host') +
+        `/api/getplayeractions?player=${player}`
     );
-    let season = await axios.get('http://localhost:3000/api/getcurseason');
+    let season = await axios.get(
+      req.protocol + '://' + req.get('host') + '/api/getcurseason'
+    );
     res.render('playerActions', {
       data: respose.data,
       season: season.data[0],

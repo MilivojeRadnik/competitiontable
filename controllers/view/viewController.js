@@ -2,8 +2,12 @@ const axios = require('axios');
 
 exports.table = async (req, res) => {
   try {
-    let respose = await axios.get('http://localhost:3000/api/gettable');
-    let season = await axios.get('http://localhost:3000/api/getcurseason');
+    let respose = await axios.get(
+      req.protocol + '://' + req.get('host') + '/api/gettable'
+    );
+    let season = await axios.get(
+      req.protocol + '://' + req.get('host') + '/api/getcurseason'
+    );
 
     return res.render('home', { data: respose.data, season: season.data[0] });
   } catch (error) {
@@ -14,9 +18,15 @@ exports.table = async (req, res) => {
 
 exports.customSelect = async (req, res) => {
   try {
-    let seasons = await axios.get('http://localhost:3000/api/getseasons');
-    let players = await axios.get('http://localhost:3000/api/getplayers');
-    let respose = await axios.get('http://localhost:3000/api/gettable');
+    let seasons = await axios.get(
+      req.protocol + '://' + req.get('host') + '/api/getseasons'
+    );
+    let players = await axios.get(
+      req.protocol + '://' + req.get('host') + '/api/getplayers'
+    );
+    let respose = await axios.get(
+      req.protocol + '://' + req.get('host') + '/api/gettable'
+    );
 
     let date = new Date(Date.now());
     date = date.toISOString().split('T')[0];

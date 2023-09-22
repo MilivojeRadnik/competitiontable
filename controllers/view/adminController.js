@@ -28,8 +28,12 @@ exports.panelView = (req, res) => {
 
 exports.postPlay = async (req, res) => {
   try {
-    let players = await axios.get('http://localhost:3000/api/getplayers');
-    let actions = await axios.get('http://localhost:3000/api/getactions');
+    let players = await axios.get(
+      req.protocol + '://' + req.get('host') + '/api/getplayers'
+    );
+    let actions = await axios.get(
+      req.protocol + '://' + req.get('host') + '/api/getactions'
+    );
 
     return res.render('admin/postPlay', {
       title: 'Insert Play',
@@ -52,7 +56,9 @@ exports.insertAction = (req, res) => {
 
 exports.updateAction = async (req, res) => {
   try {
-    let actions = await axios.get('http://localhost:3000/api/getactions');
+    let actions = await axios.get(
+      req.protocol + '://' + req.get('host') + '/api/getactions'
+    );
 
     return res.render('admin/updateAction', {
       title: 'Change Action Points',
@@ -66,7 +72,9 @@ exports.updateAction = async (req, res) => {
 
 exports.insertThrow = async (req, res) => {
   try {
-    let players = await axios.get('http://localhost:3000/api/getplayers');
+    let players = await axios.get(
+      req.protocol + '://' + req.get('host') + '/api/getplayers'
+    );
 
     return res.render('admin/throw', {
       title: 'Throw Play',

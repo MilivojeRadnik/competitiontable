@@ -1,11 +1,13 @@
 const express = require('express');
 const app = express();
+const favicon = require('serve-favicon');
 
 const apiRouter = require('./routers/api/apiRouter');
 const viewRouter = require('./routers/view/viewRouter');
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
+app.use(favicon(__dirname + '/public/favicon.ico'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -17,6 +19,8 @@ app.get('/', (req, res) => {
   res.json({ message: 'use /api endpoint!' });
 });
 
-app.listen(process.env.PORT || 3000, () => {
-  console.log('Server listening on port 3000');
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log('Server listening on port ' + PORT);
 });

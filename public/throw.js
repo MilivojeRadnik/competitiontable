@@ -5,7 +5,7 @@ const play = document.getElementById('play-select');
 player.addEventListener('change', async (e) => {
   try {
     let response = await fetch(
-      `http://localhost:3000/api/getplayeractions?player=${player.value}`
+      window.location.protocol + `/api/getplayeractions?player=${player.value}`
     );
     response = await response.json();
     let option = document.createElement('option');
