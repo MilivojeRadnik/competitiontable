@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Seasons and Names</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Seasons and Names</h1>
+
+      <div class="input-group">
+        <label for="season-select">Season:</label>
+        <select id="season-select">
+          <option value="select-date">Select Date</option>
+          <option value="spring">Spring</option>
+          <option value="summer">Summer</option>
+          <option value="autumn">Autumn</option>
+          <option value="winter">Winter</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="name-select">Name:</label>
+        <select id="name-select">
+          <option value="table">Table</option>
+          <option value="name1">Name 1</option>
+          <option value="name2">Name 2</option>
+          <option value="name3">Name 3</option>
+        </select>
+      </div>
+
+      <div id="date-input-container">
+        <div class="input-group">
+          <label for="date-input">Date:</label>
+          <input type="date" id="date-input" />
+        </div>
+        <div class="date-navigation">
+          <button id="prev-date-btn">&larr;</button>
+          <button id="next-date-btn">&rarr;</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="custom.js"></script>
+  </body>
+</html>

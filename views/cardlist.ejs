@@ -1,0 +1,20 @@
+<ul class="element-list">
+  <% for (let i = 0; i < data.length; i++) { %>
+  <li>
+    <div class="card">
+      <div class="label"><%= data[i].label %></div>
+      <div class="info">
+        <div class="points">Points: <%= data[i].points %></div>
+        <div class="date">Date: <%= data[i].played_at %></div>
+        <% if(data[i].thrown_at !== null) { %>
+      </div>
+      <br />
+      <div class="info red">
+        <div class="points">THROWN!!</div>
+        <div class="date">Date: <%= data[i].thrown_at %></div>
+        <% } %>
+      </div>
+    </div>
+  </li>
+  <% } %>
+</ul>

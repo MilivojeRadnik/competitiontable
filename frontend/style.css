@@ -1,0 +1,199 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  cursor: default;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.container h4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.table {
+  background-color: #fff;
+  border-collapse: collapse;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px; /* Added max-width property */
+}
+
+.table th:first-child,
+.table td:first-child {
+  width: 20%; /* Make the Number column narrower */
+  text-align: center; /* Center the text in the Number column */
+}
+
+.table th:last-child,
+.table td:last-child {
+  width: 30%; /* Make the Points column narrower */
+  text-align: center; /* Center the text in the Points column */
+}
+
+.table th,
+.table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table tbody tr:hover {
+  background-color: #f2f2f2;
+}
+
+.table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.name-list {
+  width: 80%;
+  max-width: fit-content;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0;
+}
+
+.name-list li {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.name-list li:hover {
+  background-color: #f2f2f2;
+}
+
+.element-list {
+  width: 80%;
+  max-width: 400px;
+  list-style: none;
+  padding: 0;
+}
+
+.element-list li {
+  margin-bottom: 10px;
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 15px;
+}
+
+.label {
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 10px;
+  margin-left: 20%;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 10px;
+  align-items: center;
+}
+
+.points,
+.date {
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: #f2f2f2;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.button:hover {
+  background-color: #e0e0e0;
+}
+
+.hidden {
+  display: none;
+}
+.date-navigation {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.date-navigation button {
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #f2f2f2;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 10px;
+}
+
+.date-navigation button:hover {
+  background-color: #e0e0e0;
+}
+.input-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: fit-content;
+  margin-bottom: 10px;
+}
+
+.input-group label {
+  display: inline-block;
+  width: 100px;
+  margin-right: 10px;
+}
+
+.input-group select,
+.input-group input[type='date'] {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #f2f2f2;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin-top: 20px;
+  }
+  .table {
+    width: 90%;
+  }
+  .name-list {
+    width: 90%;
+  }
+  .element-list {
+    width: 90%;
+  }
+}

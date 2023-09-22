@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1><%= title %></h1>
+      <h4><%= season.label %></h4>
+      <%- include('cardlist', { data: data }) %>
+    </div>
+  </body>
+</html>

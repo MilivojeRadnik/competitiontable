@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1><%= title %></h1>
+
+      <form method="POST" action="/api/throw">
+        <div class="input-group">
+          <label for="player-select">Player:</label>
+          <select id="player-select" name="player">
+            <option>Select player...</option>
+            <% for (let i = 0; i < players.length; i++) { %>
+            <option value="<%= players[i].player_id %>">
+              <%= players[i].name %>
+            </option>
+            <% } %>
+          </select>
+        </div>
+
+        <div class="input-group" id="select-div" style="visibility: hidden">
+          <label for="play-select">Play:</label>
+          <select id="play-select" name="play">
+            <option>Select play...</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="date-input">Date:</label>
+          <input type="date" id="date-input" name="date" />
+        </div>
+
+        <div class="submit-button">
+          <button type="submit" class="button">Submit</button>
+        </div>
+      </form>
+    </div>
+    <script src="/throw.js"></script>
+  </body>
+</html>

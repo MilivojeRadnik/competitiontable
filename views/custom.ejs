@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Custom Select</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Custom Select</h1>
+
+      <div class="input-group">
+        <label for="name-select">Name:</label>
+        <select id="name-select">
+          <option value="table">Table</option>
+          <% for (let i = 0; i < players.length; i++) { %>
+          <option value="<%= players[i].player_id %>">
+            <%= players[i].name %>
+          </option>
+          <% } %>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="season-select">Season:</label>
+        <select id="season-select">
+          <option value="select-date">Select Date</option>
+          <% for (let i = 0; i < seasons.length; i++) { %>
+          <option value="<%= seasons[i].season_id %>">
+            <%= seasons[i].label %>
+          </option>
+          <% } %>
+        </select>
+      </div>
+
+      <div id="date-input-container">
+        <div class="input-group">
+          <label for="date-input">Date:</label>
+          <input type="date" id="date-input" value="<%- date %>" />
+        </div>
+        <div class="date-navigation">
+          <button id="prev-date-btn">&larr;</button>
+          <button id="next-date-btn">&rarr;</button>
+        </div>
+      </div>
+
+      <div class="result-container" id="result-container">
+        <%- include('table', {data: data}) %>
+      </div>
+    </div>
+
+    <script src="/ejs.min.js"></script>
+    <script src="/custom.js"></script>
+  </body>
+</html>

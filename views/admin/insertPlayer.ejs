@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1><%= title %></h1>
+
+      <form method="POST" action="/api/insertplayer">
+        <div class="input-group">
+          <label for="player-input">Player:</label>
+          <input
+            type="text"
+            id="player-input"
+            placeholder="Enter player name"
+            name="name"
+          />
+        </div>
+
+        <div class="submit-button">
+          <button type="submit" class="button">Submit</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

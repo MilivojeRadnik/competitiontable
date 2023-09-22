@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Rbr.</th>
+      <th>Name</th>
+      <th>Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% let counter = 1 %> <% for (let i = 0; i < data.length; i++) { %>
+    <tr id="<%= data[i].player_id %>">
+      <td><%= counter %>.</td>
+      <td><%= data[i].name %></td>
+      <td><%= data[i].points %></td>
+    </tr>
+    <% counter++ %> <% } %>
+  </tbody>
+</table>

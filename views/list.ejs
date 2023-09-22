@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1><%= title %></h1>
+      <ul class="name-list">
+        <% for (let i = 0; i < data.length; i++) { %>
+        <li value="<%= data[i].key %>"><%= data[i].name %></li>
+        <% } %>
+      </ul>
+    </div>
+    <script src="/list.js"></script>
+  </body>
+</html>
